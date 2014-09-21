@@ -39,7 +39,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder "./synced", "/vagrant_data"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -86,16 +86,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
-  # config.vm.provision "chef_solo" do |chef|
-  #   chef.cookbooks_path = "../my-recipes/cookbooks"
-  #   chef.roles_path = "../my-recipes/roles"
-  #   chef.data_bags_path = "../my-recipes/data_bags"
-  #   chef.add_recipe "mysql"
-  #   chef.add_role "web"
-  #
-  #   # You may also specify custom JSON attributes:
-  #   chef.json = { mysql_password: "foo" }
-  # end
+  config.vm.provision "chef_solo" do |chef|
+    chef.cookbooks_path = ["./cookbooks", "./site-cookbook", "./site-cookbooks"]
+    #chef.roles_path = "../my-recipes/roles"
+    chef.data_bags_path = "./data_bags"
+
+    chef.add_recipe "usergroup"
+    #chef.add_role "web"
+
+    # You may also specify custom JSON attributes:
+    chef.json = { mysql_password: "foo" }
+  end
 
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).

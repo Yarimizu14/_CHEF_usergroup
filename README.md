@@ -40,6 +40,10 @@
 - userdel
 - groupdel
 
-### Related Chef Resources
+## Related Chef Resources
 - user
 - group
+
+
+## MEMO
+- openssl passwd -1 'password' #=> to create hashed password
