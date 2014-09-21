@@ -1,9 +1,9 @@
 
-### Confirmation/Creation/Modification/Deletion of User/Group
+# Confirmation/Creation/Modification/Deletion of User/Group
 
 ## Related Linux Commands
 
-# Confirmation
+### Confirmation
 - whoami
 - who
 - who am i
@@ -11,6 +11,7 @@
 - users
 - finger
 - w
+- logname
 
 - groups
 
@@ -19,23 +20,28 @@
 - vigr
 - cat /etc/group
 
-# Creation
+### Creation
 - useradd
 - adduser
 - groupadd
 
-# Modification
+### Modification
 - usermod
 - passwd
 - chfn
 - groupmod
 - gpasswd
 
-# File Modification
+### File Modification
 - chgrp
 - chown
 - newgrp
 
-# Deletion
+### Deletion
 - userdel
 - groupdel
+
+## Related Chef Resources
+
+- user
+- group
