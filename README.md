@@ -13,12 +13,11 @@
 - w
 - logname
 
-- groups
-
 - vipw
 - cat /etc/passwd
 - vigr
 - cat /etc/group
+- groups
 
 ### Creation
 - useradd
@@ -41,7 +40,6 @@
 - userdel
 - groupdel
 
-## Related Chef Resources
-
+### Related Chef Resources
 - user
 - group
